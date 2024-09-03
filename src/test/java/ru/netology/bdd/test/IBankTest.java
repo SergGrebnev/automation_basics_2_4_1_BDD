@@ -63,18 +63,18 @@ public class IBankTest {
     }
 
 
-//    @Test
-//    @DisplayName("Transfer amount more balance")
-//        //сумма перевода больше баланса
-//    void transferAmountMoreBalance() {
-//
-//        var translationPage = dashboardPage.selectDeposit(1); //Выбор счёта (карты) для пополнения (0 - певая, 1 - вторая)
-//
-//        //Перевести невалидную сумму с первой карты (0 - певая, 1 - вторая)
-//        int amount = DataHelper.getInvalidAmount(balanceFirstCard);
-//        String errorMessage = translationPage.InvalidDepositTranslation(amount, DataHelper.getNumberCard(0));
-//
-//        assertEquals("Недостаточно средств на карте", errorMessage);
-//
-//    }
+    @Test
+    @DisplayName("Transfer amount more balance")
+        //сумма перевода больше баланса
+    void transferAmountMoreBalance() {
+
+        var translationPage = dashboardPage.selectDeposit(1); //Выбор счёта (карты) для пополнения (0 - певая, 1 - вторая)
+
+        //Перевести невалидную сумму с первой карты (0 - певая, 1 - вторая)
+        int amount = DataHelper.getInvalidAmount(balanceFirstCard);
+        String errorMessage = translationPage.InvalidDepositTranslation(amount, DataHelper.getNumberCard(0));
+
+        assertEquals("Недостаточно средств на карте", errorMessage);
+
+    }
 }
