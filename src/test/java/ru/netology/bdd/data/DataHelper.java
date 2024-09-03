@@ -49,4 +49,14 @@ public class DataHelper {
         return cards.card[index];
     }
 
+    //сумма в пределах баланса
+    public static int getValidAmount(int balance) {
+        return (int) ((balance - 1) * Math.random() + 1);
+    }
+
+    //сумма превышает баланс
+    public static int getInvalidAmount(int balance) {
+        return (int) (balance + 1000 * Math.random() + 1);
+    }
+
 }
