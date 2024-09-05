@@ -50,7 +50,7 @@ public class IBankTest {
 
         //Перевести валидную сумму с первой карты (0 - певая, 1 - вторая)
         int amount = DataHelper.getValidAmount(balanceFirstCard);
-        dashboardPage = translationPage.DepositTranslation(amount, DataHelper.getNumberCard(0));
+        dashboardPage = translationPage.depositTranslation(amount, DataHelper.getNumberCard(0));
 
         int expectedFirst = balanceFirstCard - amount;//баланс на первой карте уменьшился
         int expectedSecond = balanceSecondCard + amount;//баланс на второй карте увеличился
@@ -72,7 +72,7 @@ public class IBankTest {
 
         //Перевести невалидную сумму с первой карты (0 - певая, 1 - вторая)
         int amount = DataHelper.getInvalidAmount(balanceFirstCard);
-        String errorMessage = translationPage.InvalidDepositTranslation(amount, DataHelper.getNumberCard(0));
+        String errorMessage = translationPage.invalidDepositTranslation(amount, DataHelper.getNumberCard(0));
 
         assertEquals("Недостаточно средств на карте", errorMessage);
 

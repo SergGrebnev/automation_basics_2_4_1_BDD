@@ -2,6 +2,8 @@ package ru.netology.bdd.data;
 
 import lombok.Value;
 
+import java.util.Random;
+
 public class DataHelper {
 
     /*    * login: 'vasya'
@@ -51,12 +53,12 @@ public class DataHelper {
 
     //сумма в пределах баланса
     public static int getValidAmount(int balance) {
-        return (int) ((balance - 1) * Math.random() + 1);
+        return new Random().nextInt(Math.abs(balance)) + 1;
     }
 
     //сумма превышает баланс
     public static int getInvalidAmount(int balance) {
-        return (int) (balance + 1000 * Math.random() + 1);
+        return Math.abs(balance) + new Random().nextInt(1000) + 1;
     }
 
 }
